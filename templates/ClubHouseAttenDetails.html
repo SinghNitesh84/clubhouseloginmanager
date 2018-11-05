@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+<head>
+	<meta charset="utf-8">
+	<title>CLUBHOUSE LOGIN MANAGER</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/dataTables.bootstrap.min.css') }}" rel="stylesheet"> -->
+	<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap-theme.min.css">
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10-dev/css/jquery.dataTables.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/plug-ins/f3e99a6c02/integration/bootstrap/3/dataTables.bootstrap.css">
+
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10-dev/js/jquery.dataTables.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/plug-ins/f3e99a6c02/integration/bootstrap/3/dataTables.bootstrap.js"></script>
+
+    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap-waitingfor.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/progress_new.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/back.js') }}"></script>
+
+</head>
+<!-- <header>
+	<img class="img" style="margin-top: 2px" src="{{ url_for('static', filename='DHP_Logo.svg') }}">
+</header> -->
+
+<body>
+    <div align="center" class="container-fluid">
+		<img class="img" style="margin-top: 5px" src="{{ url_for('static', filename='clubhouse.jpg') }}">
+        <form class="form-inline" style="margin-top: 40px;" action="/CLUBHOUSEHOME/">
+			<div class="container-fluid" align="center">
+				<button type="submit" class="btn btn-primary btn-lg" style="margin-left: 10px;">LOGOUT</button>
+                <button type="button" class="btn btn-warning btn-lg" style="margin-left: 10px" onclick="location.href = '/ClubHouseAdmin/';">
+				CLUBHOUSE ADMIN HOME
+				</button>
+			</div>
+		</form>
+        <ul class="nav justify-content-center">
+            <div class="alert alert-danger" style="margin-top: 10px">
+            <strong>{{message}}</strong>
+            </div>
+        </ul>
+    </div>
+    <div class="container-fluid" style="margin-top: 20px">
+                <table align="center" class="table table-bordered table-hover" id="mytable">
+                    <thead>
+                        <tr align="center">
+                        <th>RECORD_ID</th>
+                        <th>USERNAME</th>
+                        <th>EMPLOYEE_NAME</th>
+                        <th>ATTENDANCE_DATE</th>
+                        <th>LOG-IN_TIME</th>
+                       <!-- <th>UPDATED_USER</th> -->
+                        <th>LOG-OUT_TIME</th>
+                        <th>LUNCH-START_TIME</th>
+                        <th>LUNCH-DONE_TIME</th>
+                        <th>FTD_TOTAL_TIME</th>
+                        <th>TOTAL_PAY-PERIOD_TIME</th>
+                        <th>FTD_STATUS</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    {% for item in row %}
+                        <tr>
+                        <td align="center">{{item[0]}}</td>
+                        <td align="center">{{item[1]}}</td>
+                        <td align="center">{{item[2]}}</td>
+                        <td align="center">{{item[3]}}</td>
+                        <td align="center">{{item[4]}}</td>
+                       <!-- <td align="center">{{item[7]}}</td> -->
+                        <td align="center">{{item[5]}}</td>
+                        <td align="center">{{item[6]}}</td>
+                        <td align="center">{{item[7]}}</td>
+                        <td align="center">{{item[8]}}</td>
+                        <td align="center">{{item[9]}}</td>
+                        {% if (item[10] == 'DEFAULTER') %}
+                        <td align="center">
+                            <ul class="nav justify-content-center">
+                                <div class="alert alert-danger" style="margin-top: 10px">
+                                <strong>{{item[10]}}</strong>
+                                </div>
+                            </ul>
+                        </td>
+                        {% elif (item[10] == 'WORKED 8 HOURS') %}
+                        <td align="center">
+                            <ul class="nav justify-content-center">
+                                <div class="alert alert-success" style="margin-top: 10px">
+                                <strong>{{item[10]}}</strong>
+                                </div>
+                            </ul>
+                        </td>
+                        {% else %}
+                        <td align="center">
+                            <ul class="nav justify-content-center">
+                                <div class="alert alert-info" style="margin-top: 10px">
+                                <strong>{{item[10]}}</strong>
+                                </div>
+                            </ul>
+                        </td>
+                        {% endif %}
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+
+
+		</div>
+
+
+	<!--<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+	<!--<script type="text/javascript" src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/jquery.dataTables.min.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/dataTables.bootstrap.min.js') }}"></script> -->
+	<!--<script src="{{ url_for('static', filename='/js/validate.js') }}"></script> -->
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $("#mytable").DataTable();
+        });
+    </script>
+
+</body>
+
+</html>

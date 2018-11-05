@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+	<meta charset="utf-8">
+	<title>MADTOWN INNOVATORS APPS</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+	<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+</head>
+<header>
+	<div class="container-fluid" align="center">
+	<img class="img-fluid" style="margin-top: 15px" src="{{ url_for('static', filename='DHP_Logo.png') }}">
+	</div>
+	<div class="container-fluid" align="center">
+    <img class="img-fluid" style="margin-top: 15px" src="{{ url_for('static', filename='error404.jpg') }}">
+	</div>
+	<!-- Button to Open the Modal -->
+		<div class="container-fluid">
+        <ul class="nav justify-content-center">
+		<button type="button" class="btn btn-success btn-lg" style="margin-top: 10px" data-toggle="modal" data-target="#reportproblem">
+		Get MADTOWN Working(Email) !
+		</button>
+		</ul>
+        <ul class="nav justify-content-center">
+		<button type="button" class="btn btn-primary btn-lg" style="margin-top: 10px" onclick="location.href = '/selectapp/';">
+		APP HOME
+		</button>
+		</ul>
+		<p class="text-center" style="margin-top: 50px;"><font size="3" face="Arial" color="black">@Powered by MADTOWN INNOVATORS !.</font></p>
+		<p class="text-center" ><font size="2" face="Arial" color="black">@Developed by Nitesh Singh</font></p>
+		</div>
+
+		<div class="modal fade" id="reportproblem">
+		<div class="modal-dialog">
+		<div class="modal-content">
+
+		<!-- Modal Header -->
+		<div class="modal-header">
+		<div class="container-fluid" align="center">
+		<img class="img-fluid" style="margin-top: 3px" src="{{ url_for('static', filename='smiley.png') }}">
+		</div>
+		<button type="button" class="close" data-dismiss="modal">&times;</button>
+		</div>
+
+		<!-- Modal body -->
+		<div class="modal-body">
+			<div class="container">
+				<form class="container-fluid" align="center" method = "POST" action="/email/">
+				<div class="form-group" align="center">
+				<label for="Username">Username:</label>
+				<input type="username" class="form-control" id="username" placeholder="Enter Username" name="username">
+				</div>
+				<div class="form-group" align="center">
+				<label for="message">Message for MADTOWN INNOVATORS:</label>
+				<input type="message" class="form-control" id="message" placeholder="Explain your Problem Here..." name="message">
+				</div>
+				<div class="form-group" align="center">
+				<button type="submit" class="btn btn-primary">Submit</button>
+				</div>
+				</form>
+
+				</div>
+
+		</div>
+
+		<!-- Modal footer -->
+		<div class="modal-footer">
+		<div class="container-fluid" align="center">
+		<p class="text-center" style="margin-top: 5px;"><font size="3" face="Arial" color="black">@Powered by MADTOWN INNOVATORS !.</font></p>
+		</div>
+		</div>
+
+
+</header>
+
+<body>
+
+    <div class="border-row" style="width:100%"; margin-bottom: 15px></div>
+
+    <div class="container-fluid" align="center" style="min-height:100%">
+
+    </div>
+	<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+
+
+
+</body>
+
+</html>

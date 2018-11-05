@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+	<meta charset="utf-8">
+	<title>MADTOWN INNOVATORS APPS</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+	<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+</head>
+<header>
+	<div class="container-fluid" align="center">
+	<img class="img-fluid" style="margin-top: 15px" src="{{ url_for('static', filename='DHP_Logo.png') }}">
+	</div>
+
+	<!-- Button to Open the Modal -->
+		<div class="container-fluid">
+        <ul class="nav justify-content-center">
+        <div class="alert alert-success" style="margin-top: 20px">
+        <strong>SORRY!</strong> The JOB is already KICKED-ON by someone and its in RUNNING STATUS ! Please try again Later !!!
+        </div>
+        </ul>
+        <ul class="nav justify-content-center">
+		<button type="button" class="btn btn-success btn-lg" style="margin-top: 15px" onclick="location.href = '/MadtownHome/';">
+		TRY AGAIN !.
+		</button>
+		</ul>
+
+		</div>
+
+
+
+
+</header>
+
+<body>
+
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" src="{{ url_for('static', filename='js/bootstrap.min.js') }}" frameborder="0" allowfullscreen></script>
+
+
+
+</body>
+
+</html>

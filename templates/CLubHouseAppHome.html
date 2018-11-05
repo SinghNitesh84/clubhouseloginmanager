@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+	<meta charset="utf-8">
+	<title>CLUBHOUSE LOGIN MANAGER</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+	<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+	<script src="{{ url_for('static', filename='js/back.js') }}"></script>
+
+</head>
+<header>
+	<div class="container-fluid" align="center">
+	<img class="img-fluid" style="margin-top: 15px" src="{{ url_for('static', filename='clubhouse.jpg') }}">
+	</div>
+
+	<!-- Button to Open the Modal -->
+		<div class="container-fluid">
+        <ul class="nav justify-content-center">
+        <div class="alert alert-success" style="margin-top: 20px">
+        <strong>WELCOME CLUBHOUSE ADMIN !</strong>
+        </div>
+        </ul>
+		<ul class="nav justify-content-center">
+		<button type="button" class="btn btn-success btn-lg" style="margin-top: 10px" data-toggle="modal" data-target="#selectappModal">
+		Select APP !
+		</button>
+		</ul>
+		<ul class="nav justify-content-center">
+		<button type="button" class="btn btn-secondary btn-lg" style="margin-top: 10px" onclick="location.href = '/MadtownSpace/';">
+		LOGOUT
+		</button>
+		</ul>
+		</div>
+		<p class="text-center" style="margin-top: 50px;"><font size="3" face="Arial" color="black">@Powered by MADTOWN INNOVATORS !.</font></p>
+		<!--<p class="text-center" ><font size="2" face="Arial" color="black">@Developed by Nitesh Singh</font></p> -->
+
+
+
+
+			<!-- The UpdateConfig Modal -->
+		<div class="modal fade" id="selectappModal">
+		<div class="modal-dialog">
+		<div class="modal-content">
+
+		<!-- Modal Header -->
+		<div class="modal-header">
+		<h4 class="modal-title">CLUBHOUSE ADMIN Option's</h4>
+		<button type="button" class="close" data-dismiss="modal">&times;</button>
+		</div>
+
+		<!-- Modal body -->
+		<div class="modal-body">
+			<div class="container">
+				<form method = "POST" action="/ClubHouseselectapp/">
+				<div class="form-group">
+				<label for="sel1">Select list (select one):</label>
+				<select class="form-control" id="sel1" name="sel1">
+				<option disabled selected value> -- App option's -- </option>
+				<option value="RegisterNewEmployee">Register New Employee</option>
+				<option value="ExtractTimeSheet">Extract TimeSheet</option>
+				<option value="BackupTimeSheet">Backup TimeSheet</option>
+				</select>
+				</div>
+					<div class="form-group" >
+					<button class="btn btn-success" type="submit">Submit</button>
+					</div>
+
+				</form>
+
+				</div>
+
+		</div>
+
+		<!-- Modal footer -->
+		<div class="modal-footer">
+		<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+		</div>
+
+		</div>
+		</div>
+		</div>
+</header>
+
+<body>
+
+	<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+
+
+
+</body>
+
+</html>

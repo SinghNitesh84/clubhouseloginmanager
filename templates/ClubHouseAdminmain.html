@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+	<meta charset="utf-8">
+	<title>CLUBHOUSE LOGIN MANAGER</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+	<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+	<script src="{{ url_for('static', filename='js/back.js') }}"></script>
+	<!-- Bootstrap Date-Picker Plugin -->
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
+	<!--<script src="{{ url_for('static', filename='js/download.js') }}"></script> -->
+</head>
+<header>
+	<div class="container-fluid" align="center">
+	<img class="img-fluid" style="margin-top: 15px" src="{{ url_for('static', filename='clubhouse.jpg') }}">
+	</div>
+
+	<!-- Button to Open the Modal -->
+		<div class="container-fluid">
+		<ul class="nav justify-content-center">
+        <div class="alert alert-success" style="margin-top: 40px">
+        <strong>WELCOME CLUBHOUSE ADMINISTRATOR !</strong>
+        </div>
+        </ul>
+		<ul class="nav justify-content-center">
+		<button type="button" class="btn btn-success btn-lg" style="margin-top: 10px" data-toggle="modal" data-target="#registerModal">
+		REGISTER NEW EMPLOYEE
+		</button>
+		</ul>
+		<ul class="nav justify-content-center">
+		<button type="button" class="btn btn-info btn-lg" style="margin-top: 10px" onclick="location.href = '/UPDATEEMPLOYEE/';">
+		UPDATE EMPLOYEE DETAILS
+		</button>
+		</ul>
+		<ul class="nav justify-content-center">
+		<button type="button" class="btn btn-danger btn-lg" style="margin-top: 10px" data-toggle="modal" data-target="#extractModal">
+		CALCULATE TIME-SHEET
+		</button>
+		</ul>
+		<ul class="nav justify-content-center">
+		<button type="button" class="btn btn-warning btn-lg" style="margin-top: 10px" data-toggle="modal" data-target="#myModal">
+		BACKUP TIME-SHEET
+		</button>
+		</ul>
+		<ul class="nav justify-content-center">
+		<button type="button" class="btn btn-secondary btn-lg" style="margin-top: 10px" onclick="location.href = '/CLUBHOUSEHOME/';">
+		LOGOUT
+		</button>
+		</ul>
+		</div>
+		<p class="text-center" style="margin-top: 50px;"><font size="3" face="Arial" color="black">@Powered by SWEETNESS of KIDS !</font></p>
+		<!--<p class="text-center" ><font size="2" face="Arial" color="black">@Developed by Nitesh Singh</font></p> -->
+
+		<!-- The Register Modal -->
+		<div class="modal fade" id="registerModal">
+		<div class="modal-dialog">
+		<div class="modal-content">
+
+		<!-- Modal Header -->
+		<div class="modal-header">
+		<div class="container-fluid" align="center">
+		<img class="img-fluid" style="margin-top: 3px" src="{{ url_for('static', filename='Register.png') }}">
+		</div>
+		<button type="button" class="close" data-dismiss="modal">&times;</button>
+		</div>
+
+		<!-- Modal body -->
+		<div class="modal-body">
+			<div class="container" align="center">
+				<form method = "POST" action="/registeremp/">
+				<div class="form-group">
+				<label for="sel1">EMPLOYMENT TYPE:</label>
+				<select class="form-control" id="sel1" name="sel1">
+                <option disabled selected value> -- Search Type option's -- </option>
+				<option value="FTE">FULL-TIME EMPLOYEE</option>
+				<option value="PTE">PART-TIME EMPLOYEE</option>
+				</select>
+				</div>
+				<div class="form-group">
+                <label for="Name">EMPLOYEE NAME:</label>
+                <input type="Name" class="form-control" id="Name" placeholder="Enter Employee FirstName,LastName" name="Name">
+                </div>
+                <div class="form-group">
+                <label for="Username">EMPLOYEE USERNAME:</label>
+                <input type="Username" class="form-control" id="Username" placeholder="Enter Employee USERNAME" name="Username">
+                </div>
+                <div class="form-group">
+                <label for="dob">EMPLOYEE DOB:</label>
+				<input class="form-control" id="dob" name="dob" placeholder=" Select Employee DOB" type="date"/>
+                </div>
+                <div class="form-group">
+                <label for="designation">EMPLOYEE DESIGNATION:</label>
+                <input type="designation" class="form-control" id="designation" placeholder="Enter Employee Designation" name="designation">
+                </div>
+				<div class="form-group">
+				<label for="sel1">EMPLOYEE TYPE:</label>
+				<select class="form-control" id="sel2" name="sel2">
+                <option disabled selected value> -- Search Type option's -- </option>
+				<option value="ADMIN">ADMINISTRATOR</option>
+				<option value="EMP">EMPLOYEE</option>
+				</select>
+				</div>
+                <div class="form-group" >
+					<button class="btn btn-success" type="submit">Submit</button>
+				</div>
+        </form>
+
+				</div>
+
+		<!-- Modal footer -->
+		<div class="modal-footer">
+		<div class="container-fluid" align="center">
+		<p class="text-center" style="margin-top: 5px;"><font size="3" face="Arial" color="black">@Powered by SWEETNESS of KIDS !</font></p>
+		</div>
+		</div>
+		</div>
+		</div>
+		</div>
+		</div>
+
+		<!-- The Register Modal -->
+		<div class="modal fade" id="extractModal">
+		<div class="modal-dialog">
+		<div class="modal-content">
+
+		<!-- Modal Header -->
+		<div class="modal-header">
+		<div class="container-fluid" align="center">
+		<img class="img-fluid" style="margin-top: 3px" src="{{ url_for('static', filename='Register.png') }}">
+		</div>
+		<button type="button" class="close" data-dismiss="modal">&times;</button>
+		</div>
+
+		<!-- Modal body -->
+		<div class="modal-body">
+			<div class="container" align="center">
+				<form method = "POST" action="/extractemp/">
+
+				<div class="form-group">
+                <label class="control-label" for="date">FROM Date</label>
+        		<input class="form-control" id="date" name="fromdate" placeholder="MM/DD/YYY" type="date"/>
+                </div>
+				<div class="form-group">
+                <label class="control-label" for="date_1">END Date</label>
+        		<input class="form-control" id="date_1" name="enddate" placeholder="MM/DD/YYY" type="date"/>
+                </div>
+                <div class="form-group" >
+					<button class="btn btn-success" type="submit">Submit</button>
+				</div>
+        </form>
+
+				</div>
+
+		<!-- Modal footer -->
+		<div class="modal-footer">
+		<div class="container-fluid" align="center">
+		<p class="text-center" style="margin-top: 5px;"><font size="3" face="Arial" color="black">@Powered by SWEETNESS of KIDS !</font></p>
+		</div>
+		</div>
+		</div>
+		</div>
+		</div>
+		</div>
+</header>
+
+<body>
+
+	<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+	<script>
+    $(document).ready(function(){
+      var date_input=$('input[name="date"]'); //our date input has the name "date"
+      var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
+      var options={
+        format: 'mm/dd/yyyy',
+        container: container,
+        todayHighlight: true,
+        autoclose: true,
+      };
+      date_input.datepicker(options);
+    })
+</script>
+
+
+</body>
+
+</html>
