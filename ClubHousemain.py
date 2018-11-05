@@ -164,7 +164,8 @@ def validateuser():
 
 @app.route('/CLUBHOUSEATTENDANCE/',methods=['GET','POST'])
 def attendance():
-    if g.user in session:
+    if g.user:
+        
         return render_template('clubattendance.html')
     else:
         error = "Please Login Again ,User Session Not Valid !"
