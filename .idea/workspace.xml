@@ -3,6 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="40420d50-315f-43c4-bdcf-0dd907725103" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/ClubHousemain.py" afterPath="$PROJECT_DIR$/ClubHousemain.py" />
+      <change beforePath="$PROJECT_DIR$/templates/ClubHouseAttenDetails.html" afterPath="$PROJECT_DIR$/templates/ClubHouseAttenDetails.html" />
+      <change beforePath="$PROJECT_DIR$/templates/clubattendance.html" afterPath="$PROJECT_DIR$/templates/clubattendance.html" />
+      <change beforePath="$PROJECT_DIR$/templates/clubloginsuccess.html" afterPath="$PROJECT_DIR$/templates/clubloginsuccess.html" />
+      <change beforePath="$PROJECT_DIR$/templates/clubregistersuccess.html" afterPath="$PROJECT_DIR$/templates/clubregistersuccess.html" />
+      <change beforePath="$PROJECT_DIR$/templates/error.html" afterPath="$PROJECT_DIR$/templates/error.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -16,8 +21,8 @@
       <file leaf-file-name="ClubHousemain.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ClubHousemain.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="440">
-              <caret line="500" column="13" lean-forward="true" selection-start-line="500" selection-start-column="13" selection-end-line="500" selection-end-column="13" />
+            <state relative-caret-position="256">
+              <caret line="18" column="32" lean-forward="false" selection-start-line="18" selection-start-column="32" selection-end-line="18" selection-end-column="32" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
@@ -78,7 +83,6 @@
         <option value="$PROJECT_DIR$/templates/Register.html" />
         <option value="$PROJECT_DIR$/templates/Rebill.html" />
         <option value="$PROJECT_DIR$/templates/main.html" />
-        <option value="$PROJECT_DIR$/templates/error.html" />
         <option value="$PROJECT_DIR$/templates/bulkloadmain.html" />
         <option value="$PROJECT_DIR$/static/monitor/config.cfg" />
         <option value="$PROJECT_DIR$/main_local.py" />
@@ -95,8 +99,6 @@
         <option value="$PROJECT_DIR$/templates/hicnmultiplemain.html" />
         <option value="$PROJECT_DIR$/templates/hicnmultipleloadstpsec.html" />
         <option value="$PROJECT_DIR$/templates/hicnmultiplevalidate.html" />
-        <option value="$PROJECT_DIR$/templates/clubattendance.html" />
-        <option value="$PROJECT_DIR$/templates/clubloginsuccess.html" />
         <option value="$PROJECT_DIR$/templates/hicnupdatevalidate.html" />
         <option value="$PROJECT_DIR$/Textexportexcel.py" />
         <option value="$PROJECT_DIR$/restcalltest.py" />
@@ -115,13 +117,16 @@
         <option value="$PROJECT_DIR$/main.py" />
         <option value="$PROJECT_DIR$/templates/ClubHouseAdminmain.html" />
         <option value="$PROJECT_DIR$/SqlLiteDBCreator.py" />
-        <option value="$PROJECT_DIR$/templates/ClubHouseAttenDetails.html" />
-        <option value="$PROJECT_DIR$/templates/clubregistersuccess.html" />
         <option value="$PROJECT_DIR$/templates/ClubHouseEmployeeDetails.html" />
         <option value="$PROJECT_DIR$/test1.py" />
         <option value="$PROJECT_DIR$/invoice.py" />
         <option value="$PROJECT_DIR$/Procfile" />
         <option value="$PROJECT_DIR$/requirements.txt" />
+        <option value="$PROJECT_DIR$/templates/clubattendance.html" />
+        <option value="$PROJECT_DIR$/templates/ClubHouseAttenDetails.html" />
+        <option value="$PROJECT_DIR$/templates/clubloginsuccess.html" />
+        <option value="$PROJECT_DIR$/templates/clubregistersuccess.html" />
+        <option value="$PROJECT_DIR$/templates/error.html" />
         <option value="$PROJECT_DIR$/ClubHousemain.py" />
       </list>
     </option>
@@ -175,11 +180,6 @@
             <path>
               <item name="clubhouseloginmanager" type="b2602c69:ProjectViewProjectNode" />
               <item name="clubhouseloginmanager" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="clubhouseloginmanager" type="b2602c69:ProjectViewProjectNode" />
-              <item name="clubhouseloginmanager" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -395,7 +395,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3291714" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="RemoteSynchronizer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3291714" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3984109" sideWeight="0.510312" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.38706017" sideWeight="0.489688" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.38706017" sideWeight="0.489688" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3280363" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24960339" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -452,15 +452,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/static/js/back.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/Rebill.html" />
-    <entry file="file://$PROJECT_DIR$/templates/InvoiceSearchHome.html" />
     <entry file="file://$PROJECT_DIR$/templates/invoicetieout.html" />
     <entry file="file://$PROJECT_DIR$/static/js/progress_new.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -476,32 +467,11 @@
     <entry file="file://$PROJECT_DIR$/UpdateConfig.py" />
     <entry file="file://$PROJECT_DIR$/User.py" />
     <entry file="file://$PROJECT_DIR$/templates/invoicedetails.html" />
-    <entry file="file://$PROJECT_DIR$/templates/CLubHouseAppHome.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-225">
-          <caret line="4" column="34" lean-forward="false" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/clubhousemain.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="534">
-          <caret line="39" column="0" lean-forward="true" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/hicnupdatevalidate.html" />
     <entry file="file://$PROJECT_DIR$/templates/hicnupdatemain.html" />
     <entry file="file://$PROJECT_DIR$/templates/hicnmultiplevalidate.html" />
     <entry file="file://$PROJECT_DIR$/templates/hicnmultipleloadstpsec.html" />
     <entry file="file://$PROJECT_DIR$/templates/bulkloadfinal.html" />
-    <entry file="file://$PROJECT_DIR$/templates/ClubHouseAttenDetails.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="766">
-          <caret line="55" column="42" lean-forward="false" selection-start-line="55" selection-start-column="42" selection-end-line="55" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/SqlLiteDBCreator.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="525">
@@ -510,38 +480,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/clubregistersuccess.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="20" column="13" lean-forward="true" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/loginHome.html" />
-    <entry file="file://$PROJECT_DIR$/templates/ClubHouseAdminmain.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="611">
-          <caret line="95" column="29" lean-forward="false" selection-start-line="95" selection-start-column="29" selection-end-line="95" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/CLUBloginHome.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-621">
-          <caret line="4" column="34" lean-forward="false" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/bulkloadmain.html" />
     <entry file="file://$PROJECT_DIR$/templates/bulkloadvalidate.html" />
-    <entry file="file://$PROJECT_DIR$/templates/ClubHouseEmployeeDetails.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1197">
-          <caret line="57" column="31" lean-forward="false" selection-start-line="57" selection-start-column="31" selection-end-line="57" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/main.py" />
     <entry file="file://$PROJECT_DIR$/test1.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -701,18 +642,98 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/templates/ClubHouseAdminmain.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="9" selection-end-column="74" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/templates/clubattendance.html">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="8" column="4" lean-forward="false" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/CLubHouseAppHome.html">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="21">
-          <caret line="5" column="13" lean-forward="true" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+          <caret line="4" column="34" lean-forward="false" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/ClubHouseAttenDetails.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/error.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="11" column="8" lean-forward="true" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/clubregistersuccess.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="8" column="4" lean-forward="false" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/clubloginsuccess.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="8" column="4" lean-forward="false" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/CLUBloginHome.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21">
+          <caret line="4" column="34" lean-forward="false" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/ClubHousePassmain.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/clubhousemain.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="819">
+          <caret line="39" column="0" lean-forward="true" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/ClubHouseEmployeeDetails.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1003">
+          <caret line="57" column="31" lean-forward="false" selection-start-line="57" selection-start-column="31" selection-end-line="57" selection-end-column="31" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ClubHousemain.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="500" column="13" lean-forward="true" selection-start-line="500" selection-start-column="13" selection-end-line="500" selection-end-column="13" />
+        <state relative-caret-position="256">
+          <caret line="18" column="32" lean-forward="false" selection-start-line="18" selection-start-column="32" selection-end-line="18" selection-end-column="32" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
           </folding>

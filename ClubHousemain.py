@@ -12,11 +12,11 @@ cursor = conn.cursor()
 @app.before_request
 def before_request():
     g.user = None
+    session.permanent = True
+    app.permanent_session_lifetime = datetime.timedelta(minutes=20)
+    session.modified = True
     if 'user' in session:
         g.user = session['user']
-    #session.permanent = True
-    #app.permanent_session_lifetime = datetime.timedelta(minutes=20)
-    #session.modified = True
 
 
 @app.route('/CLUBHOUSEHOME/')
