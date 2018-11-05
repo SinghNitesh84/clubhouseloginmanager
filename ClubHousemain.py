@@ -12,11 +12,12 @@ cursor = conn.cursor()
 @app.before_request
 def before_request():
     g.user = None
-    session.permanent = True
-    app.permanent_session_lifetime = datetime.timedelta(minutes=20)
-    session.modified = True
     if 'user' in session:
         g.user = session['user']
+    #session.permanent = True
+    #app.permanent_session_lifetime = datetime.timedelta(minutes=20)
+    #session.modified = True
+
 
 @app.route('/CLUBHOUSEHOME/')
 def home():
@@ -53,40 +54,37 @@ def admin():
 
 @app.route('/registeremp/', methods=["GET","POST"])
 def registeremp():
-    if g.user:
-        if request.method == "POST":
-            employmenttype = request.form['sel1']
-            employeename = request.form['Name']
-            Username = request.form['Username']
-            dob = request.form['dob']
-            designation = request.form['designation']
-            employeetype = request.form['sel2']
-            status = 'ACTIVE'
-            JoinedDate = time.strftime('%Y-%m-%d')
-            data = (employeename, Username, employeetype, employmenttype, dob,status,designation,JoinedDate)
-            userdata = (Username,employeetype)
-            conn = sqlite3.connect("ClubHouseInfo.db")
-            cursor = conn.cursor()
-            select_qury = ("select Username from EmployeeInfo where Username = '" + str(Username) + "'")
-            cursor.execute(select_qury)
-            row = cursor.fetchone()
-            if row is None:
-                insert_query = 'INSERT INTO EmployeeInfo (EmployeeName,Username,Employee_Type,Employement_Type,DOB,status,Designation,JoinedDate)VALUES' + str(data)
-                print(insert_query)
-                cursor.execute(insert_query)
-                #ins_query = 'INSERT INTO Employee_LoginCred_Info (Username,EmployeeType) VALUES' ('" + str(Username) + "')"
-                ins_query = 'INSERT INTO Employee_LoginCred_Info (Username,EmployeeType) VALUES' + str(userdata)
-                print(ins_query)
-                cursor.execute(ins_query)
-                conn.commit()
-                error = "Congratulations , Employee registered Successfully !!!"
-                return render_template("clubregistersuccess.html", error=error)
-            else:
-                error = "Username already exist , Please use different Username and try registration again !!!"
-                return render_template("clubregistersuccess.html", error=error)
-    else:
-        error = "Please Login Again ,User Session Not Valid !"
-        return render_template('CLUBloginHome.html', error=error)
+    if request.method == "POST":
+        employmenttype = request.form['sel1']
+        employeename = request.form['Name']
+        Username = request.form['Username']
+        dob = request.form['dob']
+        designation = request.form['designation']
+        employeetype = request.form['sel2']
+        status = 'ACTIVE'
+        JoinedDate = time.strftime('%Y-%m-%d')
+        data = (employeename, Username, employeetype, employmenttype, dob,status,designation,JoinedDate)
+        userdata = (Username,employeetype)
+        conn = sqlite3.connect("ClubHouseInfo.db")
+        cursor = conn.cursor()
+        select_qury = ("select Username from EmployeeInfo where Username = '" + str(Username) + "'")
+        cursor.execute(select_qury)
+        row = cursor.fetchone()
+        if row is None:
+            insert_query = 'INSERT INTO EmployeeInfo (EmployeeName,Username,Employee_Type,Employement_Type,DOB,status,Designation,JoinedDate)VALUES' + str(data)
+            print(insert_query)
+            cursor.execute(insert_query)
+            #ins_query = 'INSERT INTO Employee_LoginCred_Info (Username,EmployeeType) VALUES' ('" + str(Username) + "')"
+            ins_query = 'INSERT INTO Employee_LoginCred_Info (Username,EmployeeType) VALUES' + str(userdata)
+            print(ins_query)
+            cursor.execute(ins_query)
+            conn.commit()
+            error = "Congratulations , Employee registered Successfully !!!"
+            return render_template("clubregistersuccess.html", error=error)
+        else:
+            error = "Username already exist , Please use different Username and try registration again !!!"
+            return render_template("clubregistersuccess.html", error=error)
+
 
 
 @app.route('/passwordregister/', methods=["GET","POST"])
@@ -177,32 +175,32 @@ def attendance():
 
 @app.route('/loginattendance/', methods=['GET','POST'])
 def loginattendance():
-    #if g.user:
-    #newdate = time.strftime('%d-%b-%y')
-    newdate = time.strftime('%Y-%m-%d')
-    starttime = time.strftime('%H:%M')
-    Username = request.cookies.get('userID')
-    dummytime = '00:00'
-    clock = 'N'
-    conn = sqlite3.connect("ClubHouseInfo.db")
-    cursor = conn.cursor()
-    cursor.execute("select * from Employee_LoginManager where Date = '" + str(newdate) + "' and Username='" + str(Username) + "'")
-    row = cursor.fetchone()
-    if row is None:
-        ldata = (Username,newdate,starttime, starttime,dummytime,dummytime,dummytime,clock,clock,clock)
-        logdata = 'INSERT INTO Employee_LoginManager (Username,Date,LogIn_Time,LogOut_Time,Lunch_Start,Lunch_Done,Total_Hrs_FD,LogOut_Clock,LunchIn_Clock,LunchOut_Clock)VALUES' + str(ldata)
-        print(logdata)
-        cursor.execute(logdata)
-        conn.commit()
-        error = "Successfully logged In for the Day, Have a Great DAY !!!"
-        return render_template("clubloginsuccess.html", error=error)
+    if g.user:
+        #newdate = time.strftime('%d-%b-%y')
+        newdate = time.strftime('%Y-%m-%d')
+        starttime = time.strftime('%H:%M')
+        Username = request.cookies.get('userID')
+        dummytime = '00:00'
+        clock = 'N'
+        conn = sqlite3.connect("ClubHouseInfo.db")
+        cursor = conn.cursor()
+        cursor.execute("select * from Employee_LoginManager where Date = '" + str(newdate) + "' and Username='" + str(Username) + "'")
+        row = cursor.fetchone()
+        if row is None:
+            ldata = (Username,newdate,starttime, starttime,dummytime,dummytime,dummytime,clock,clock,clock)
+            logdata = 'INSERT INTO Employee_LoginManager (Username,Date,LogIn_Time,LogOut_Time,Lunch_Start,Lunch_Done,Total_Hrs_FD,LogOut_Clock,LunchIn_Clock,LunchOut_Clock)VALUES' + str(ldata)
+            print(logdata)
+            cursor.execute(logdata)
+            conn.commit()
+            error = "Successfully logged In for the Day, Have a Great DAY !!!"
+            return render_template("clubloginsuccess.html", error=error)
+        else:
+            error = "You already recorded your WELCOME - IN time for the Day , Please Contact Administrator Incase of any question."
+            return render_template("clubloginsuccess.html", error=error)
+        return render_template('error.html')
     else:
-        error = "You already recorded your WELCOME - IN time for the Day , Please Contact Administrator Incase of any question."
-        return render_template("clubloginsuccess.html", error=error)
-    return render_template('error.html')
-    #else:
-     #   error = "Please Login Again ,User Session Not Valid !"
-      #  return render_template('CLUBloginHome.html', error=error)
+        error = "Please Login Again ,User Session Not Valid !"
+        return render_template('CLUBloginHome.html', error=error)
 
 
 @app.route('/logoutattendance/', methods=['GET','POST'])
