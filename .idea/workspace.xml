@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="40420d50-315f-43c4-bdcf-0dd907725103" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/ClubHouseInfo.db" afterPath="$PROJECT_DIR$/ClubHouseInfo.db" />
       <change beforePath="$PROJECT_DIR$/ClubHousemain.py" afterPath="$PROJECT_DIR$/ClubHousemain.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -17,8 +16,8 @@
       <file leaf-file-name="ClubHousemain.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ClubHousemain.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="440">
-              <caret line="499" column="13" lean-forward="true" selection-start-line="499" selection-start-column="13" selection-end-line="499" selection-end-column="13" />
+            <state relative-caret-position="231">
+              <caret line="175" column="22" lean-forward="false" selection-start-line="175" selection-start-column="22" selection-end-line="175" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -714,8 +713,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ClubHousemain.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="499" column="13" lean-forward="true" selection-start-line="499" selection-start-column="13" selection-end-line="499" selection-end-column="13" />
+        <state relative-caret-position="231">
+          <caret line="175" column="22" lean-forward="false" selection-start-line="175" selection-start-column="22" selection-end-line="175" selection-end-column="22" />
           <folding />
         </state>
       </provider>

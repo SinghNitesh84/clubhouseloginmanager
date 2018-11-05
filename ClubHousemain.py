@@ -174,32 +174,32 @@ def attendance():
 
 @app.route('/loginattendance/', methods=['GET','POST'])
 def loginattendance():
-    if g.user:
-        #newdate = time.strftime('%d-%b-%y')
-        newdate = time.strftime('%Y-%m-%d')
-        starttime = time.strftime('%H:%M')
-        Username = request.cookies.get('userID')
-        dummytime = '00:00'
-        clock = 'N'
-        conn = sqlite3.connect("ClubHouseInfo.db")
-        cursor = conn.cursor()
-        cursor.execute("select * from Employee_LoginManager where Date = '" + str(newdate) + "' and Username='" + str(Username) + "'")
-        row = cursor.fetchone()
-        if row is None:
-            ldata = (Username,newdate,starttime, starttime,dummytime,dummytime,dummytime,clock,clock,clock)
-            logdata = 'INSERT INTO Employee_LoginManager (Username,Date,LogIn_Time,LogOut_Time,Lunch_Start,Lunch_Done,Total_Hrs_FD,LogOut_Clock,LunchIn_Clock,LunchOut_Clock)VALUES' + str(ldata)
-            print(logdata)
-            cursor.execute(logdata)
-            conn.commit()
-            error = "Successfully logged In for the Day, Have a Great DAY !!!"
-            return render_template("clubloginsuccess.html", error=error)
-        else:
-            error = "You already recorded your WELCOME - IN time for the Day , Please Contact Administrator Incase of any question."
-            return render_template("clubloginsuccess.html", error=error)
-        return render_template('error.html')
+    #if g.user:
+    #newdate = time.strftime('%d-%b-%y')
+    newdate = time.strftime('%Y-%m-%d')
+    starttime = time.strftime('%H:%M')
+    Username = request.cookies.get('userID')
+    dummytime = '00:00'
+    clock = 'N'
+    conn = sqlite3.connect("ClubHouseInfo.db")
+    cursor = conn.cursor()
+    cursor.execute("select * from Employee_LoginManager where Date = '" + str(newdate) + "' and Username='" + str(Username) + "'")
+    row = cursor.fetchone()
+    if row is None:
+        ldata = (Username,newdate,starttime, starttime,dummytime,dummytime,dummytime,clock,clock,clock)
+        logdata = 'INSERT INTO Employee_LoginManager (Username,Date,LogIn_Time,LogOut_Time,Lunch_Start,Lunch_Done,Total_Hrs_FD,LogOut_Clock,LunchIn_Clock,LunchOut_Clock)VALUES' + str(ldata)
+        print(logdata)
+        cursor.execute(logdata)
+        conn.commit()
+        error = "Successfully logged In for the Day, Have a Great DAY !!!"
+        return render_template("clubloginsuccess.html", error=error)
     else:
-        error = "Please Login Again ,User Session Not Valid !"
-        return render_template('CLUBloginHome.html', error=error)
+        error = "You already recorded your WELCOME - IN time for the Day , Please Contact Administrator Incase of any question."
+        return render_template("clubloginsuccess.html", error=error)
+    return render_template('error.html')
+    #else:
+     #   error = "Please Login Again ,User Session Not Valid !"
+      #  return render_template('CLUBloginHome.html', error=error)
 
 
 @app.route('/logoutattendance/', methods=['GET','POST'])
