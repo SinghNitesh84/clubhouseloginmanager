@@ -7,7 +7,6 @@ import datetime,time
 app = Flask(__name__)
 app.secret_key = os.urandom(24)
 conn = sqlite3.connect("ClubHouseInfo.db")
-
 cursor = conn.cursor()
 
 @app.before_request
@@ -66,6 +65,8 @@ def registeremp():
             JoinedDate = time.strftime('%Y-%m-%d')
             data = (employeename, Username, employeetype, employmenttype, dob,status,designation,JoinedDate)
             userdata = (Username,employeetype)
+            conn = sqlite3.connect("ClubHouseInfo.db")
+            cursor = conn.cursor()
             select_qury = ("select Username from EmployeeInfo where Username = '" + str(Username) + "'")
             cursor.execute(select_qury)
             row = cursor.fetchone()
@@ -95,6 +96,8 @@ def passwordregist():
         passwo = request.form['passwd']
         Cpasswo = request.form['newpasswd']
         print(User)
+        conn = sqlite3.connect("ClubHouseInfo.db")
+        cursor = conn.cursor()
         if User == '':
             error = "Please enter Username, Username cannot be Empty !!!"
             return render_template("CLUBloginHome.html", error=error)
@@ -127,6 +130,8 @@ def validateuser():
         username = request.form['username']
         # print(username)
         password = request.form['password']
+        conn = sqlite3.connect("ClubHouseInfo.db")
+        cursor = conn.cursor()
         cursor.execute("select EmployeeType from Employee_LoginCred_Info where Username='" + str(username) + "' and Password='" + str(password) + "'")
         row = cursor.fetchone()
 
@@ -176,6 +181,8 @@ def loginattendance():
         Username = request.cookies.get('userID')
         dummytime = '00:00'
         clock = 'N'
+        conn = sqlite3.connect("ClubHouseInfo.db")
+        cursor = conn.cursor()
         cursor.execute("select * from Employee_LoginManager where Date = '" + str(newdate) + "' and Username='" + str(Username) + "'")
         row = cursor.fetchone()
         if row is None:
@@ -204,6 +211,8 @@ def logoutattendance():
         starttime = time.strftime('%H:%M')
         Username = request.cookies.get('userID')
         dummytime = '00:00'
+        conn = sqlite3.connect("ClubHouseInfo.db")
+        cursor = conn.cursor()
         cursor.execute("select * from Employee_LoginManager where Date = '" + str(newdate) + "' and Username='" + str(Username) + "'")
         row = cursor.fetchone()
         if row is None:
@@ -243,6 +252,8 @@ def lunchoutattendance():
         starttime = time.strftime('%H:%M')
         Username = request.cookies.get('userID')
         dummytime = '00:00'
+        conn = sqlite3.connect("ClubHouseInfo.db")
+        cursor = conn.cursor()
         cursor.execute("select * from Employee_LoginManager where Date = '" + str(newdate) + "' and Username='" + str(Username) + "'")
         row = cursor.fetchone()
         if row is None:
@@ -290,6 +301,8 @@ def lunchinattendance():
         #Username = 'dsingh'
         Username = request.cookies.get('userID')
         dummytime = '00:00'
+        conn = sqlite3.connect("ClubHouseInfo.db")
+        cursor = conn.cursor()
         cursor.execute("select * from Employee_LoginManager where Date = '" + str(newdate) + "' and Username='" + str(Username) + "'")
         row = cursor.fetchone()
         if row is None:
@@ -333,6 +346,8 @@ def extractemp():
             enddate = request.form['enddate']
             print(fromdata)
             print(enddate)
+            conn = sqlite3.connect("ClubHouseInfo.db")
+            cursor = conn.cursor()
             select_qury = ("select * from Employee_LoginManager where date BETWEEN '" + str(fromdata) + "' AND '" + str(enddate) + "' AND STATUS is NULL")
             cursor.execute(select_qury)
             print(select_qury)
@@ -408,6 +423,8 @@ def extractemp():
 @app.route("/UPDATEEMPLOYEE/")
 def UPDATEEMPLOYEE():
     if g.user:
+        conn = sqlite3.connect("ClubHouseInfo.db")
+        cursor = conn.cursor()
         select_qury = ("select * from EmployeeInfo")
         cursor.execute(select_qury)
         finalrow = cursor.fetchall()
@@ -421,6 +438,8 @@ def terminateempl(item):
     if g.user:
         usertoexit = item
         TerminateDate = time.strftime('%Y-%m-%d')
+        conn = sqlite3.connect("ClubHouseInfo.db")
+        cursor = conn.cursor()
         select_user = ("select * from EmployeeInfo where id ='" + str(usertoexit) + "'")
         cursor.execute(select_user)
         value = cursor.fetchone()
@@ -448,7 +467,8 @@ def activateempl(item):
     if g.user:
         usertoexit = item
         JoinedDate = time.strftime('%Y-%m-%d')
-
+        conn = sqlite3.connect("ClubHouseInfo.db")
+        cursor = conn.cursor()
         select_user = ("select * from EmployeeInfo where id ='" + str(usertoexit) + "'")
         cursor.execute(select_user)
         value = cursor.fetchone()
