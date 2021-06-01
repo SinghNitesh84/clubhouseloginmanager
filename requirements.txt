@@ -56,6 +56,6 @@ six==1.11.0
 SQLAlchemy==1.2.5
 suds-jurko==0.6
 traitlets==4.3.2
-urllib3==1.22
+urllib3==1.26.5
 Werkzeug==0.14.1
 WTForms==2.1
