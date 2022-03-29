@@ -38,7 +38,7 @@ ldap3==2.4.1
 MarkupSafe==1.0
 nbformat==4.4.0
 openpyxl==2.5.0
-paramiko==2.4.0
+paramiko==2.10.1
 plotly==2.5.0
 post==0.0.26
 psutil==5.4.3
